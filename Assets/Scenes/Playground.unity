@@ -837,6 +837,11 @@ PrefabInstance:
       propertyPath: field of view
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5774871089747814852, guid: 49867d21228ed7d458a8285daf1e0cf0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 6571920257168479030, guid: 49867d21228ed7d458a8285daf1e0cf0,
         type: 3}
       propertyPath: m_LocalPosition.x
