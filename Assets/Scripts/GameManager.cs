@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public float timerlimit;
     public float Timer;
     public TMP_Text TimerText;
-    private float coin;
+    public float coin;
     private float var1;
 
 
@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
         var1 = (coin*100) + (Timer*10);
         TimerText.text = ("Score:"+(var1.ToString("F1")));
 
-
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

@@ -22,10 +22,13 @@ public class CarController : MonoBehaviour
     private bool grounded;
     public float groundRayLength = 0.5f;
     private Transform groundRayPoint;
+    public float XAxis;
 
     [Header("Wheels")]
     public float maxWheelTurn = 25f;
     public Transform leftFrontWheel, rightFrontWheel;
+    public float RTurnLimit;
+    public float LTurnLimit;
     
 
     [Header("Particles")]
@@ -53,6 +56,7 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+        XAxis=transform.position.x;
 
         // speedInput = 0f;
 
@@ -65,17 +69,22 @@ public class CarController : MonoBehaviour
         //     speedInput = Input.GetAxis("Vertical") * reverseAccel * 1000f;
         // }
 
-        if (Input.GetKeyDown("space") && grounded)
-        {
-            theRB.AddForce(Vector3.up * jumpHeight * 1000f);
-        }
-
 
         turnInput = Input.GetAxis("Horizontal");
         if (grounded)
         {
             transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime, 0f));
         }
+
+        if ((transform.rotation.eulerAngles.y > RTurnLimit) && (transform.rotation.eulerAngles.y <(RTurnLimit + 2)))
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, RTurnLimit, transform.rotation.z));
+        }
+        else if ((transform.rotation.eulerAngles.y < 360-LTurnLimit) && (transform.rotation.eulerAngles.y >(360-LTurnLimit - 2)))
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 360-LTurnLimit, transform.rotation.z));
+        }
+
 
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
         rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, turnInput * maxWheelTurn, rightFrontWheel.localRotation.eulerAngles.z);
