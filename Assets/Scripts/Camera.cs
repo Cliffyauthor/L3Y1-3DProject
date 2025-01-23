@@ -20,7 +20,7 @@ public class Camera : MonoBehaviour
     {
         Vector3 offset = new Vector3(0,5,-5);
         transform.position = Vector3.Lerp(transform.position, target.position + offset,  followSpeed * Time.deltaTime);        
-        transform.position = new Vector3(Xaxis,Yaxis , transform.position.z);
+        transform.position = new Vector3(Xaxis,transform.position.y , transform.position.z);
     }
     private void LateUpdate() 
     {
