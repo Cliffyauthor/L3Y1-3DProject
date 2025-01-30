@@ -82,10 +82,10 @@ public class CarController : MonoBehaviour
 
 
         turnInput = Input.GetAxis("Horizontal");
-        if (grounded)
-        {
-            transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime, 0f));
-        }
+
+        
+        transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime, 0f));
+    
 
         if ((transform.rotation.eulerAngles.y > RTurnLimit) && (transform.rotation.eulerAngles.y <(RTurnLimit + 2)))
         {

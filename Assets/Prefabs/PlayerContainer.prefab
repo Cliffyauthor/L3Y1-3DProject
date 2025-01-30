@@ -247,7 +247,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0a2addfbc7439c14c98e413a558cf2b2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 29e144dc84f29cb48973a2a3b5dbb559, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.183
   m_Pitch: 1
@@ -11043,7 +11043,8 @@ MonoBehaviour:
   followSpeed: 4
   target: {fileID: 4373499183022068196}
   zOffset: -3
-  CamMove: 0
+  CamMoveR: 0
+  CamMoveL: 0
 --- !u!1 &6714031807162683163
 GameObject:
   m_ObjectHideFlags: 0
