@@ -9,7 +9,8 @@ public class Camera : MonoBehaviour
     public float followSpeed;
     public Transform target;
     public float zOffset;
-    public float CamMove;
+    public float CamMoveR;
+    public float CamMoveL;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,11 @@ public class Camera : MonoBehaviour
         Vector3 offset = new Vector3(0,5,zOffset);
         transform.position = Vector3.Lerp(transform.position, target.position + offset,  followSpeed * Time.deltaTime);        
             
-                if (GameObject.Find("Car").GetComponent<CarController>().XAxis <CamMove)
+        if (GameObject.Find("Car").GetComponent<CarController>().XAxis <CamMoveR && GameObject.Find("Car").GetComponent<CarController>().XAxis >CamMoveL)
         {
             transform.position = new Vector3(Xaxis,transform.position.y , transform.position.z);
         }    
+
 
     }
 
