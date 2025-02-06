@@ -23,6 +23,7 @@ public class CarController : MonoBehaviour
     public float groundRayLength = 0.5f;
     private Transform groundRayPoint;
     public float XAxis;
+    public float ZVel;
 
     [Header("Wheels")]
     public float maxWheelTurn = 25f;
@@ -64,6 +65,7 @@ public class CarController : MonoBehaviour
             hornSound.Play();
         }
         engineSound.pitch = 1 + (speedInput/10000);
+        ZVel = theRB.velocity.z;
 
 
 

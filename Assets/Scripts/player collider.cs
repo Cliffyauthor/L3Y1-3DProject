@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class playercollider : MonoBehaviour
 {
 
     public Vector3 lastPos;
+    public int VelStart;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,13 @@ public class playercollider : MonoBehaviour
     {
         if(other.gameObject.CompareTag("KillTrigger"))
         {
-            transform.position = lastPos;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        if (other.gameObject.CompareTag("Checkpoint"))
+
+        if (other.gameObject.CompareTag("Start"))
         {
-            lastPos = transform.position;
+            VelStart = 1;
         }
     }
 

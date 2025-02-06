@@ -13,6 +13,7 @@ public class collectable : MonoBehaviour
             Destroy(gameObject);
         }
 
+
     }
 
 }
