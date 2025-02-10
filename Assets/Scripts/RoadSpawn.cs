@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class RoadSpawn : MonoBehaviour
 {
-    public GameObject Road1;
+
     public GameObject Road2;
     public GameObject Road3;
+    public GameObject NRoad;
     public GameObject SRoad;
+    private GameObject NDelRoad;
     private GameObject DelRoad;
     public float RLength;
     public float RLFr;
     public Vector3 SPos;
-    public int Roadnum;
     public float ZPos;
     public float SpawnOffset;
-
-
-    
-
-    
     public GameObject ObjectToSpawn;
+
+    
     // Start is called before the first frame update
     void Start()
     {
         SPos = new Vector3(0,0,0);
 
         RLFr = RLength;
+        NDelRoad = SRoad;
     }
 
     // Update is called once per frame
@@ -47,22 +46,29 @@ public class RoadSpawn : MonoBehaviour
         {
 
             transform.position = new Vector3 (0,0,ZPos);
-            int RoadNow = Random.Range(1,4);
+            int RoadNow = Random.Range(1,3);
             if (RoadNow == 1)
             {
-                ObjectToSpawn = Road1;
+                NRoad = ObjectToSpawn;
+
+                ObjectToSpawn = Road3;
+                Road3 = NRoad;
+
             }
             if (RoadNow == 2)
             {
+                NRoad = ObjectToSpawn;
                 ObjectToSpawn =Road2;
+                Road2 = NRoad;
             }        
-            if(RoadNow == 3)
-            {
-                ObjectToSpawn = Road3;
-            }
+
             SPos = SPos + new Vector3 (0,0,RLength);
-            SpawnObject();
+            SpawnObject();            
+            Destroy(DelRoad);
             RLFr = RLFr + RLength;
+            DelRoad = NDelRoad;
+            NDelRoad = ObjectToSpawn;
+
 
 
 
