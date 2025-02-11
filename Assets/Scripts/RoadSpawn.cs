@@ -7,7 +7,7 @@ public class RoadSpawn : MonoBehaviour
 
     public GameObject Road2;
     public GameObject Road3;
-    public GameObject NRoad;
+    private GameObject NRoad;
     public GameObject SRoad;
     private GameObject NDelRoad;
     private GameObject DelRoad;
