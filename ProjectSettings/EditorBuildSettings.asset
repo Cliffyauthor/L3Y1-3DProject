@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: a831c4947230dfe40b795b10f5f91c6a
-  - enabled: 0
-    path: Assets/Scenes/Playground.unity
-    guid: 89e3475cc02ac58438e96f6f69fa93af
   - enabled: 1
     path: Assets/Scenes/Road creation.unity
     guid: 2cf6679ef9bc3bf4490c1be52885391a

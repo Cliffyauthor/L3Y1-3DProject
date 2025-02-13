@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
     public float timerlimit;
     public TMP_Text TimerText;
     public float Timer;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float coin;
     private float var1;
     public float MinSpeed;
+
 
 
     // Start is called before the first frame update
